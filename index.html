@@ -19,8 +19,7 @@
     font-family:-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
     background:var(--bg); color:var(--text); font-size:13px;
   }
-  .app{display:grid; grid-template-rows:auto auto minmax(0,1fr) auto; height:100vh; padding:12px; gap:12px;}
-  @media (max-width:1100px){ .app{height:auto; min-height:100vh;} }
+  .app{display:flex; flex-direction:column; min-height:100vh; padding:12px; gap:12px;}
 
   /* Header */
   header.bar{
@@ -66,21 +65,21 @@
   .badge.flat{color:var(--muted); background:rgba(154,160,189,.12)}
 
   /* Charts grid 3 cols x 2 rows */
-  .charts{display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:repeat(2,minmax(0,1fr)); gap:12px; min-height:0;}
-  @media (max-width:1100px){ .charts{grid-template-columns:1fr; grid-template-rows:none;} .kpis{grid-template-columns:repeat(2,1fr)} }
+  .charts{display:grid; grid-template-columns:repeat(3,1fr); gap:12px;}
+  @media (max-width:1100px){ .charts{grid-template-columns:1fr;} .kpis{grid-template-columns:repeat(2,1fr)} }
   .card{
     background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
-    padding:10px 12px; display:flex; flex-direction:column; min-height:0;
+    padding:10px 12px; display:flex; flex-direction:column; min-height:280px;
   }
   .card h3{margin:0 0 6px; font-size:12px; font-weight:600; color:var(--text)}
   .card h3 small{color:var(--muted); font-weight:400}
-  .canvas-wrap{position:relative; flex:1; min-height:0;}
-  @media (max-width:1100px){ .canvas-wrap{height:240px} }
+  .canvas-wrap{position:relative; flex:1; min-height:220px;}
+  @media (max-width:1100px){ .canvas-wrap{min-height:240px} }
 
   /* Bottom: table */
   .tablecard{
     background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
-    padding:10px 12px; display:flex; flex-direction:column; min-height:0; max-height:240px;
+    padding:10px 12px; display:flex; flex-direction:column; min-height:0; max-height:360px;
   }
   .tablecard h3{margin:0 0 8px; font-size:12px; font-weight:600}
   .scroll{overflow:auto; min-height:0;}
